@@ -1,6 +1,6 @@
 /*
 
-i am the best
+i am the 
  */
 package randomdat;
 
