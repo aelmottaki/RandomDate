@@ -4,14 +4,11 @@
  */
 package randomdat;
 
-/**
- *
- * @author EL MOTTAKI
- */
+
 public class RandomDat {
 
 
     public static void main(String[] args) {
-        // TODO code application logic here
+     
     }
 }
