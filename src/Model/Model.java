@@ -13,9 +13,9 @@ public class Model {
     */
     private int CNumber(int year)
     {
-        int i,C,lastpatrolyear;
+        int i,C,lastpatrolyear = startyear;
         do{
-            lastpatrolyear = startyear + 28; 
+            lastpatrolyear = lastpatrolyear + 28; 
         }while(year > lastpatrolyear);
         lastpatrolyear = lastpatrolyear - 28;
         int counter = 0;
@@ -33,7 +33,12 @@ public class Model {
     */
     private int BNumber(int year)
     {
-        int B = 0;
+        int B,counter;
+        int y;
+        do{
+            
+        }
+        while(this.isLeapYear(y))
         return B;
     }  
     
