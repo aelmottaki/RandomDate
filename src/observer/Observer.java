@@ -10,4 +10,8 @@ package observer;
  */
 public interface Observer {
    public void update(String str);
+   public void BOption();
+   public void OOption();
+   public void BJours();
+   public void OJours();
 }

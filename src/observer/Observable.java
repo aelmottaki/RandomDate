@@ -11,5 +11,9 @@ package observer;
 public interface Observable {
    public void addObserver(Observer obs);
    public void removeObserver();
-   public void notifyObserver(String str);
+   public void update(String str);
+   public void BOption();
+   public void OOption();
+   public void BJours();
+   public void OJours();
 }
