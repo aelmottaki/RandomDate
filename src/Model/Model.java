@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 /**
@@ -10,32 +6,58 @@ package Model;
  */
 public class Model {
     private int[] cmois = {7,4,3,7,5,2,7,4,1,6,3,1};
-    
+    static int startyear = 1900;static int yearend = 2100;
     /**
     * calculer le nombre C
     * @params int year
     */
-    static int CNumber(int year)
+    private int CNumber(int year)
     {
-        int C = 0;
-        return C;
+        int i,C,lastpatrolyear;
+        do{
+            lastpatrolyear = startyear + 28; 
+        }while(year > lastpatrolyear);
+        lastpatrolyear = lastpatrolyear - 28;
+        int counter = 0;
+        for(i=lastpatrolyear+1;i==year;i++){
+            if(this.isLeapYear(i)){
+                counter++;
+            }
+        }
+        return counter;
     }
     
     /**
     * calculer le nombre B
     * @params int year
     */
-    static int BNumber(int year)
+    private int BNumber(int year)
     {
         int B = 0;
         return B;
     }  
     
     /**
+    * verifie si une année est bissextile
+    * @params int year
+    */
+    private boolean isLeapYear(int year)
+    {
+        boolean isleap= false;
+        int rest;
+        rest = year % 4;
+        if (rest == 0) {
+            isleap = true;
+        }
+        return isleap;
+    }
+    
+    
+    /**
     * caluler le jour
     * @params int day,int month,int year
     */
-    static int getDayNombre(int day,int month,int year)
+    private int getDayNombre(int day,int month,int year)
     {
      
         return 0;
