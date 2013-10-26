@@ -13,7 +13,7 @@ public class Model {
     */
     private int CNumber(int year)
     {
-        int i,C,lastpatrolyear = startyear;
+        int i,lastpatrolyear = startyear;
         do{
             lastpatrolyear = lastpatrolyear + 28; 
         }while(year > lastpatrolyear);
@@ -33,13 +33,13 @@ public class Model {
     */
     private int BNumber(int year)
     {
-        int B,counter;
-        int y;
-        do{
-            
+        int counter=0;
+        int y = year;
+        while(!this.isLeapYear(y)){
+            counter++;
         }
-        while(this.isLeapYear(y))
-        return B;
+        
+        return counter;
     }  
     
     /**
@@ -64,8 +64,8 @@ public class Model {
     */
     private int getDayNombre(int day,int month,int year)
     {
-     
-        return 0;
+        int j = day - cmois[month-1] - 2 * this.BNumber(year) + this.CNumber(year);
+        return j;
     }
     
     /**
