@@ -19,4 +19,5 @@ public interface Observable {
    public void BJours();
    public void OJours();
    public void refreche(Color c);
+   public void next();
 }

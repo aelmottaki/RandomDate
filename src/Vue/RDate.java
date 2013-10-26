@@ -14,14 +14,18 @@ import observer.Observer;
  */
 public class RDate extends javax.swing.JFrame implements Observer {
     Controler controler;
+    int temp=0;
     // boolean pour controler le botton de debut(toggle)
     boolean tbdebut;
     public RDate() {
         tbdebut = true;
         initComponents();
+        // initialisation de controler
         controler = new Controler();
         controler.addObserver(this);
         controler.BJours();
+        controler.setDD(1900);
+        controler.setDF(2100);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
      
@@ -52,12 +56,14 @@ public class RDate extends javax.swing.JFrame implements Observer {
         Vendredi = new java.awt.Button();
         Samedi = new java.awt.Button();
         Dimenche = new java.awt.Button();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setForeground(new java.awt.Color(153, 180, 209));
 
+        tddebut.setText("1900");
         tddebut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tddebutActionPerformed(evt);
@@ -69,6 +75,7 @@ public class RDate extends javax.swing.JFrame implements Observer {
             }
         });
 
+        tdfin.setText("2100");
         tdfin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tdfinActionPerformed(evt);
@@ -130,10 +137,10 @@ public class RDate extends javax.swing.JFrame implements Observer {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel3.setBackground(new java.awt.Color(153, 180, 209));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        jLabel3.setBackground(new java.awt.Color(102, 102, 255));
+        jLabel3.setFont(new java.awt.Font("Minion Pro SmBd", 0, 52)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("08-08-2013");
+        jLabel3.setText("Random Date");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -226,6 +233,11 @@ public class RDate extends javax.swing.JFrame implements Observer {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel4.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel4.setFont(new java.awt.Font("Meiryo UI", 0, 12)); // NOI18N
+        jLabel4.setText("BY ELMOTTAKI ");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -238,6 +250,7 @@ public class RDate extends javax.swing.JFrame implements Observer {
                 .addContainerGap(52, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +259,8 @@ public class RDate extends javax.swing.JFrame implements Observer {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jLabel4))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -287,27 +301,27 @@ public class RDate extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_DebutActionPerformed
 
     private void LundiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LundiActionPerformed
-       controler.clickDay(1);
+       controler.clickDay(2);
     }//GEN-LAST:event_LundiActionPerformed
 
     private void MardiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MardiActionPerformed
-        controler.clickDay(1);
+        controler.clickDay(3);
     }//GEN-LAST:event_MardiActionPerformed
 
     private void MercrediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MercrediActionPerformed
-        controler.clickDay(1);
+        controler.clickDay(4);
     }//GEN-LAST:event_MercrediActionPerformed
 
     private void JeudiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JeudiActionPerformed
-        controler.clickDay(1);
+        controler.clickDay(5);
     }//GEN-LAST:event_JeudiActionPerformed
 
     private void VendrediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VendrediActionPerformed
-        controler.clickDay(1);
+        controler.clickDay(6);
     }//GEN-LAST:event_VendrediActionPerformed
 
     private void SamediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SamediActionPerformed
-        controler.clickDay(1);
+        controler.clickDay(7);
     }//GEN-LAST:event_SamediActionPerformed
 
     private void DimencheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DimencheActionPerformed
@@ -319,15 +333,18 @@ public class RDate extends javax.swing.JFrame implements Observer {
         if(Integer.parseInt(tddebut.getText())<1900 || Integer.parseInt(tddebut.getText())>2100)
        {
           tddebut.setText("");
+          Debut.setEnabled(false);
        }
         else
         {
             controler.setDD(Integer.parseInt(tddebut.getText()));
+           // Debut.setEnabled(true);
         }
         }
         catch(Exception e)
         {
            tddebut.setText("");
+           Debut.setEnabled(false);
         }
     }//GEN-LAST:event_tddebutFocusLost
 
@@ -340,14 +357,17 @@ public class RDate extends javax.swing.JFrame implements Observer {
         if(Integer.parseInt(tdfin.getText())>2100 || Integer.parseInt(tdfin.getText())<1900 || (Integer.parseInt(tdfin.getText())<Integer.parseInt(tddebut.getText())))
         {
             tdfin.setText("");
+            Debut.setEnabled(false);
         }
         else
         {
             controler.setDF(Integer.parseInt(tdfin.getText()));
+            Debut.setEnabled(true);
         }
         }
         catch(Exception e){
             tdfin.setText("");
+            Debut.setEnabled(false);
         }
         
     }//GEN-LAST:event_tdfinFocusLost
@@ -400,6 +420,7 @@ public class RDate extends javax.swing.JFrame implements Observer {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -462,6 +483,12 @@ public class RDate extends javax.swing.JFrame implements Observer {
         {
         }
           
+    }
+
+    @Override
+    public void next() {
+        temp++;
+        jLabel4.setText("La Durée : "+temp);
     }
  
   
