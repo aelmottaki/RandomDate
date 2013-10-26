@@ -17,4 +17,5 @@ public interface Observer {
    public void BJours();
    public void OJours();
    public void refreche(Color c);
+   public void next();
 }
