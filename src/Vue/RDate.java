@@ -4,6 +4,8 @@
  */
 package Vue;
 import Controle.Controler;
+import java.awt.Color;
+import java.io.IOException;
 import observer.Observable;
 import observer.Observer;
 /**
@@ -20,6 +22,9 @@ public class RDate extends javax.swing.JFrame implements Observer {
         controler = new Controler();
         controler.addObserver(this);
         controler.BJours();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+     
     }
 
     /**
@@ -90,20 +95,22 @@ public class RDate extends javax.swing.JFrame implements Observer {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tddebut)
-                    .addComponent(tdfin, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(Debut, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tddebut)
+                            .addComponent(tdfin, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(Debut, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 25, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,6 +137,7 @@ public class RDate extends javax.swing.JFrame implements Observer {
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Lundi.setActionCommand("Lundi");
@@ -376,6 +384,7 @@ public class RDate extends javax.swing.JFrame implements Observer {
             @Override
             public void run() {
                 new RDate().setVisible(true);
+                
             }
         });
     }
@@ -437,4 +446,23 @@ public class RDate extends javax.swing.JFrame implements Observer {
       Samedi.setEnabled(true);
       Dimenche.setEnabled(true);
     }
+
+    @Override
+    public void refreche(Color c) {
+     try{
+      jPanel3.setBackground(c);
+       Thread.sleep(300);
+       jPanel3.setBackground(Color.WHITE);
+       Thread.sleep(100);
+       jPanel3.setBackground(c);
+       Thread.sleep(300);
+       jPanel3.setBackground(Color.WHITE);
+        }
+        catch(Exception e)
+        {
+        }
+          
+    }
+ 
+  
 }

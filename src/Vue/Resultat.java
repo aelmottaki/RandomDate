@@ -22,13 +22,21 @@ public class Resultat extends javax.swing.JFrame {
         this.list = list;
        model = new DefaultTableModel();
        model.addColumn("Date");
-       model.addColumn("Reponse");
+       model.addColumn("Votre Reponse");
        model.addColumn("Reponse Correcte");
        jTable1.setModel(model);
+       initTable();
     }
     public void initTable()
     {
-        
+        Object o[] = new Object[3];
+        for(Try l:list)
+        {
+            o[0]=l.getDate();
+            o[1]=l.getRDay();
+            o[2]=l.getTDay();
+            model.addRow(o); 
+        }
     }
 
     /**
@@ -103,7 +111,7 @@ public class Resultat extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Resultat(null).setVisible(true);
+                new Resultat(new ArrayList<Try>()).setVisible(true);
             }
         });
     }

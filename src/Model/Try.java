@@ -13,7 +13,7 @@ public class Try {
         this.day_reponse = day_reponse;
         this.day_true = day_reponse;
     }
-    public String getDay()
+    public String getDate()
     {
         return this.date;
     }

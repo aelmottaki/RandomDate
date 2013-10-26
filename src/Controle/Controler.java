@@ -2,6 +2,7 @@
 package Controle;
 
 import Model.Model;
+import java.awt.Color;
 import observer.Observable;
 import observer.Observer;
 import java.util.ArrayList;
@@ -97,4 +98,25 @@ public class Controler implements Observable {
        } 
     }
 
+    @Override
+    public void refreche(Color c) {
+       for(Observer obs:observer)
+       {
+           obs.refreche(c);
+       } 
+    }
+    class Play implements Runnable{
+        Color c;
+        public Play(Color c)
+        {
+            this.c = c;
+        }
+        @Override
+        public void run() {
+            try {
+                refreche(c);
+            } catch (Exception ex) {
+              
+            }
+      }}
 }

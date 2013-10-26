@@ -4,6 +4,8 @@
  */
 package observer;
 
+import java.awt.Color;
+
 /**
  *
  * @author EL MOTTAKI
@@ -16,4 +18,5 @@ public interface Observable {
    public void OOption();
    public void BJours();
    public void OJours();
+   public void refreche(Color c);
 }
