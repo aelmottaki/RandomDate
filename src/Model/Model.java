@@ -97,7 +97,7 @@ public class Model {
         //generer un mois aléatoire
         int month = rnd.nextInt(11) + 1;
         //generer un jour aléatoire
-        int day = 0;
+        int day = rnd.nextInt(30) + 1;
         int[] date = {day,month,year};
         return date;
     }
