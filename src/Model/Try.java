@@ -3,7 +3,7 @@ package Model;
 
 /**
  *
- * @author EL MOTTAKI
+ * @author EL MOTTAKI abdelilah
  */
 public class Try {
     String date,day_reponse,day_true; 
