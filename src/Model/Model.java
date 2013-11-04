@@ -50,7 +50,7 @@ public class Model {
             counter++;
             y--;
         }
-        if(month==1 || month==2)
+        if((month==1 || month==2) && !isPatrolYear(year) && !isLeapYear(year))
             counter++;
         return counter;
     }  
